@@ -57,7 +57,7 @@ router.get("/:id", (req, res) => {
 
 // POST /api/users
 router.post("/", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {username: 'Lernantino',  password: 'password1234'}
   User.create({
     username: req.body.username,
     password: req.body.password,
@@ -73,7 +73,7 @@ router.post("/", (req, res) => {
 });
 // PUT /api/users/1
 router.put("/:id", withAuth, (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {username: 'Lernantino',  password: 'password1234'}
 
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
@@ -153,5 +153,31 @@ router.post("/logout", withAuth, (req, res) => {
     res.status(404).end();
   }
 });
+
+// router.post("/relog", withAuth, (req, res) => {
+//   User.findOne({
+//     where: {
+//       username: req.session.username,
+//     },
+//   }).then((dbUserData) => {
+//     if (!dbUserData) {
+//       res.status(400).json({ message: "No user with that username address!" });
+//       return;
+//     }
+
+//     req.session.save(() => {
+//       // declare session variables
+//       req.session.user_id = dbUserData.id;
+//       req.session.username = dbUserData.username;
+//       req.session.loggedIn = false;
+//       req.session.wasLogged = true;
+
+//       res.json({
+//         user: dbUserData,
+//         message: "You must log in again before posting!",
+//       });
+//     });
+//   });
+// });
 
 module.exports = router;

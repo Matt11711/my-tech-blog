@@ -14,7 +14,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // this means the comment must be at least four characters long
+        // this means the comment must be at least one characters long
         len: [1],
       },
     },
