@@ -154,30 +154,5 @@ router.post("/logout", withAuth, (req, res) => {
   }
 });
 
-// router.post("/relog", withAuth, (req, res) => {
-//   User.findOne({
-//     where: {
-//       username: req.session.username,
-//     },
-//   }).then((dbUserData) => {
-//     if (!dbUserData) {
-//       res.status(400).json({ message: "No user with that username address!" });
-//       return;
-//     }
-
-//     req.session.save(() => {
-//       // declare session variables
-//       req.session.user_id = dbUserData.id;
-//       req.session.username = dbUserData.username;
-//       req.session.loggedIn = false;
-//       req.session.wasLogged = true;
-
-//       res.json({
-//         user: dbUserData,
-//         message: "You must log in again before posting!",
-//       });
-//     });
-//   });
-// });
 
 module.exports = router;
