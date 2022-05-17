@@ -47,6 +47,10 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+router.get("/new-post", withAuth, (req, res) => {
+  res.render("new-post");
+});
+
 router.get("/edit/:id", withAuth, (req, res) => {
   Post.findOne({
     where: {
