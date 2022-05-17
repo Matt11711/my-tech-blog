@@ -1,7 +1,5 @@
 # my-tech-blog
 
-# sleek-employee-tracker
-
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
 ## Description
@@ -21,7 +19,8 @@ This app lets you make text posts as an authenticated user and comment on other 
 Clone the repo from github, type npm install in the command line, set up a .env file (not described here), set up the database with db/schema.db, and then you are done. Alternatively, use the deployed version at https://dry-spire-11294.herokuapp.com/
 
 ## Usage
-Feel free to login and add a post, following the buttons on screen. It's pretty self explanitory. 
+
+Feel free to login and add a post, following the buttons on screen. It's pretty self explanitory.
 
 ## License
 
